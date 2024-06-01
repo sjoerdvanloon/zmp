@@ -2,10 +2,16 @@
 const count = ref(0);
 const increment = () => count.value++;
 const fullpath = () => "posts/" + count.value;
+const { data } = await useFetch("/api/hello");
+
+const dd = ref(null);
+
+//function x() { dd.value= await useFetch("/api/hello")} ;
 </script>
 <template>
   <main>
     <div>
+      <pre>{{ data }}</pre>
       <p>{{ $route.path }}</p>
       <p>{{ fullpath() }}</p>
       <button @click="increment">Increment</button>
