@@ -1,7 +1,6 @@
 <script setup lang="ts">
 const count = ref(0);
 const increment = () => count.value++;
-const decrement = () => count.value--;
 const fullpath = () => "posts/" + count.value;
 const { data } = await useFetch("/api/hello");
 
@@ -10,13 +9,11 @@ const dd = ref(null);
 //function x() { dd.value= await useFetch("/api/hello")} ;
 </script>
 <template>
-  <AppHeader></AppHeader>
-  <main class="container-fluid">
+  <main class="container">
     <div>
       <pre>{{ data }}</pre>
       <p>{{ $route.path }}</p>
       <p>{{ fullpath() }}</p>
-      <BaseButton foo="Sjoerd" @plick="decrement"></BaseButton>
       <button @click="increment">Increment</button>
       <p>{{ count }}</p>
       <article>
@@ -38,7 +35,6 @@ const dd = ref(null);
     </div>
     <NuxtPage />
   </main>
-  <AppFooter></AppFooter>
 </template>
 
 <style>
