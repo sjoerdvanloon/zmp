@@ -11,7 +11,8 @@ const dd = ref(null);
 </script>
 <template>
   <AppHeader></AppHeader>
-  <main class="container-fluid">
+  <main class="container-fluid bg-emerald-300 font-mono">
+    <TheQuote :id="count"></TheQuote>
     <div>
       <pre>{{ data }}</pre>
       <p>{{ $route.path }}</p>
